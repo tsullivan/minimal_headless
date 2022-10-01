@@ -5,4 +5,3 @@ gsutil -m cp \
 
 unzip chromium-4fe4891-locales-linux_x64.zip  
 
-node index.js
