@@ -8,7 +8,15 @@ import * as puppeteer from 'puppeteer';
   });
 
   const page = await browser.newPage();
-  await page.goto('https://webglsamples.org/aquarium/aquarium.html', { waitUntil: 'load' });
+
+  page.on('console', (msg) => {
+    const [text, type] = [msg.text(), msg.type()];
+    console.log(`console-${type}`, text);
+  });
+
+  await page.goto('https://webglsamples.org/aquarium/aquarium.html', {
+    waitUntil: 'load',
+  });
 
   await page.screenshot({ path: 'aquarium.png' });
 
