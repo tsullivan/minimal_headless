@@ -5,6 +5,10 @@ import * as puppeteer from 'puppeteer';
     executablePath: './headless_shell-linux_x64/headless_shell',
     userDataDir: 'userdata',
     args: [
+      '--disable-gpu',
+      '--hide-scrollbars',
+      '--mainFrameClipsContent=false',
+      '--mute-audio',
       '--ozone-platform=drm',
     ],
   });
